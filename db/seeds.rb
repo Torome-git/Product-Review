@@ -5,9 +5,9 @@ Product.destroy_all
 User.destroy_all
 
 puts "Creating users..."
-user1 = User.create(name: Faker::Name.name)
-user2 = User.create(name: Faker::Name.name)
-user3 = User.create(name: Faker::Name.name)
+user1 = User.create(name: 'Soila')
+user2 = User.create(name: 'Alice')
+user3 = User.create(name: 'Lavine')
 
 puts "Creating products..."
 product1 = Product.create(name: "Stapler", price: 10)
@@ -21,6 +21,14 @@ puts "Creating reviews..."
 # * TODO: create reviews! Remember, a review belongs to a product *
 # * and a review belongs to an user.                              *
 # *****************************************************************
-# Create Reviews Here
+
+Review.create(star_rating: 5, comment: 'lovely', product_id: product1.id, user_id: user1.id)
+Review.create(star_rating: 2, comment: 'nice', product_id: product2.id, user_id: user2.id)
+Review.create(star_rating: 3, comment: 'cool', product_id: product3.id, user_id: user3.id)
+Review.create(star_rating: 4, comment: 'commendable', product_id: product4.id, user_id: user3.id)
+Review.create(star_rating: 2, comment: 'great', product_id: product4.id, user_id: user2.id)
+Review.create(star_rating: 3, comment: 'effective', product_id: product3.id, user_id: user2.id)
+Review.create(star_rating: 4, comment: 'amazing', product_id: product2.id, user_id: user3.id)
+Review.create(star_rating: 5, comment: 'excellent', product_id: product1.id, user_id: user1.id)
 
 puts "Seeding done!"
